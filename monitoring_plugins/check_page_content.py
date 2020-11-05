@@ -23,38 +23,11 @@
 #
 #  For all license terms see README.md and LICENSE Files in root directory of this Project.
 
-import argparse
+import sys
 
-from monitoring_utils.PageContent import PageContent
+sys.path.insert(0, '/usr/local/monitoring/')
+
+from monitoring_utils.Checks.Web.PageContent import PageContent
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Check Page Content')
-
-    parser.add_argument('-w', '--warning-content', dest='warningcontent', action='append', default=[],
-                        help='Warning content. Return warning state if at least one matched and no Critical content match')
-    parser.add_argument('-c', '--critical-content', dest='criticalcontent', action='append', default=[],
-                        help='Critical content. Return critical state if at least one matched')
-    parser.add_argument('-o', '--ok-content', dest='okcontent', action='append', default=[],
-                        help='OK content. Return OK state if at least one matched and no warning or critical content match')
-    parser.add_argument('-H', '--header', dest='header', action='append', default=[],
-                        help='Header for request. Format: NAME=VALUE')
-    parser.add_argument('-u', '--uri', dest='uri', type=str, help='URI to fetch', default='/')
-    parser.add_argument('-d', '--domain', dest='domain', type=str, help='Domain to fetch', required=True)
-    parser.add_argument('-p', '--port', dest='port', type=int, help='Port to fetch')
-    parser.add_argument('-s', '--ssl', dest='ssl', help='Use https', action='store_true')
-    parser.add_argument('--client-cert', dest='clientcert', type=str, help='Path to client certificate')
-    parser.add_argument('--client-key', dest='clientkey', type=str, help='Path to client certificate key file')
-
-    args = parser.parse_args()
-    PageContent(
-        ok_content=args.okcontent,
-        warning_content=args.warningcontent,
-        critical_content=args.criticalcontent,
-        uri=args.uri,
-        domain=args.domain,
-        port=args.port,
-        ssl=args.ssl,
-        header=args.header,
-        client_key=args.clientkey,
-        clinet_cert=args.clientcert,
-    ).main()
+    PageContent()

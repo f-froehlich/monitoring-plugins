@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
-#  monitoring-plugins
+# -*- coding: utf-8
+
+#  Monitoring monitoring-utils
 #
-#  monitoring-plugins are the check plugins for monitoring
+#  Monitoring monitoring-utils are the background magic for my plugins, scripts and more
 #
-#  Copyright (c) 2020 Fabian Fröhlich <mail@confgen.org> https://icinga2.confgen.org
+#  Copyright (c) 2020 Fabian Fröhlich <mail@confgen.org> <https://icinga2.confgen.org>
 #
 #
 #  This program is free software: you can redistribute it and/or modify
@@ -20,6 +22,9 @@
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 #  For all license terms see README.md and LICENSE Files in root directory of this Project.
+#
+#  Checkout this project on github <https://github.com/f-froehlich/monitoring-plugins>
+#  and also my other projects <https://github.com/f-froehlich>
 
 usage() {
 	cat - >&2 << _EOT_

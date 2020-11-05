@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 # -*- coding: utf-8
 
-#  monitoring-plugins
+#  Monitoring monitoring-plugins
 #
-#  monitoring-plugins are the check plugins for monitoring
+#  Monitoring monitoring-plugins are the background magic for my plugins, scripts and more
 #
-#  Copyright (c) 2020 Fabian Fröhlich <mail@confgen.org> https://icinga2.confgen.org
+#  Copyright (c) 2020 Fabian Fröhlich <mail@confgen.org> <https://icinga2.confgen.org>
 #
 #
 #  This program is free software: you can redistribute it and/or modify
@@ -22,17 +22,16 @@
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 #  For all license terms see README.md and LICENSE Files in root directory of this Project.
+#
+#  Checkout this project on github <https://github.com/f-froehlich/monitoring-plugins>
+#  and also my other projects <https://github.com/f-froehlich>
 
 
-import argparse
+import sys
 
-from monitoring_utils.GroupMembers import GroupMembers
+sys.path.insert(0, '/usr/local/monitoring/')
+
+from monitoring_utils.Checks.User.GroupMembers import GroupMembers
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Check group members')
-
-    parser.add_argument('-g', '--group', dest='group', default='sudo', help='Group to check the members')
-    parser.add_argument('-u', '--user', dest='users', action='append', default=[], help='User, who should be in group')
-
-    args = parser.parse_args()
-    GroupMembers(args.group, args.users).main()
+    GroupMembers()

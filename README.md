@@ -16,7 +16,7 @@ See our [documentation](https://icinga2.confgen.org) for details.
 ## Required
 * install python 3.7 (other versions may also work)
 * install python3-pip
-* `pip3 install --upgrade monitoring-plugins --target=/usr/local/monitoring`
+* `pip3 install --upgrade monitoring-plugins`
 
 
 # License

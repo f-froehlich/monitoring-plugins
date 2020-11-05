@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 # -*- coding: utf-8
 
-#  monitoring-plugins
+#  Monitoring monitoring-plugins
 #
-#  monitoring-plugins are the check plugins for monitoring
+#  Monitoring monitoring-plugins are the background magic for my plugins, scripts and more
 #
-#  Copyright (c) 2020 Fabian Fröhlich <mail@confgen.org> https://icinga2.confgen.org
+#  Copyright (c) 2020 Fabian Fröhlich <mail@confgen.org> <https://icinga2.confgen.org>
 #
 #
 #  This program is free software: you can redistribute it and/or modify
@@ -22,40 +22,15 @@
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 #  For all license terms see README.md and LICENSE Files in root directory of this Project.
+#
+#  Checkout this project on github <https://github.com/f-froehlich/monitoring-plugins>
+#  and also my other projects <https://github.com/f-froehlich>
 
-import argparse
+import sys
 
-from monitoring_utils.UFWStatus import UFWStatus
+sys.path.insert(0, '/usr/local/monitoring/')
+
+from monitoring_utils.Checks.Firewall.UFWStatus import UFWStatus
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Check ufw status and rules')
-
-    parser.add_argument('-s', '--status', dest='status', default='active',
-                        help='Status of ufw')
-    parser.add_argument('--warn-inactive', dest='warninactive', default='on',
-                        help='Warn on inactive UFW')
-    parser.add_argument('-l', '--logging', dest='logging', default='on',
-                        help='Status of logging')
-    parser.add_argument('-L', '--logging-policy', dest='loggingpolicy',
-                        default='low', help='Status of logging level')
-    parser.add_argument('-I', '--in', dest='incoming', default='deny',
-                        help='Default incoming policy')
-    parser.add_argument('-O', '--out', dest='outgoing',
-                        default='allow', help='Default outgoing policy')
-    parser.add_argument('-R', '--routing', dest='routing',
-                        default='disabled', help='Default routing policy')
-    parser.add_argument('-r', '--rule', dest='rule', action='append',
-                        help='Firewall rule from,to,action', default=[])
-
-    args = parser.parse_args()
-
-    UFWStatus(
-        args.status,
-        args.warninactive,
-        args.logging,
-        args.loggingpolicy,
-        args.incoming,
-        args.outgoing,
-        args.routing,
-        args.rule
-    ).main()
+    UFWStatus()
