@@ -58,7 +58,7 @@ additional_files = [
 ]
 setup_args = dict(
     name='monitoring_plugins',
-    version='2.0.0-1',
+    version='2.0.0-2',
     description='Plugins for monitoring',
     long_description_content_type="text/markdown",
     long_description=README + '\n\n\n' + CHANGELOG,
@@ -75,7 +75,7 @@ setup_args = dict(
 )
 
 install_requires = [
-    'monitoring-plugins~=2.0.0'
+    'monitoring-utils~=2.0.0'
 ]
 
 if __name__ == '__main__':
