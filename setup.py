@@ -48,17 +48,20 @@ class OverrideInstall(install):
 
 with open('README.md') as readme_file:
     README = readme_file.read()
+with open('CHANGELOG.md') as changelog_file:
+    CHANGELOG = changelog_file.read()
 
 additional_files = [
     'README.md',
+    'CHANGELOG.md',
     'LICENSE',
 ]
 setup_args = dict(
     name='monitoring_plugins',
-    version='1.0.3',
+    version='2.0.0-1',
     description='Plugins for monitoring',
     long_description_content_type="text/markdown",
-    long_description=README,
+    long_description=README + '\n\n\n' + CHANGELOG,
     license='AGPLv3',
     packages=find_packages(),
     author='Fabian Fröhlich',
@@ -68,11 +71,11 @@ setup_args = dict(
     url='https://github.com/f-froehlich/monitoring-plugins',
     download_url='https://pypi.org/project/monitoring-plugins/',
     package_data={'monitoring_plugins': ['*.sh']},
-    data_files=[('monitoring_plugins', additional_files)]
+    data_files=[('monitoring_plugins_doc', additional_files)]
 )
 
 install_requires = [
-    'monitoring-plugins~=1.0.0'
+    'monitoring-plugins~=2.0.0'
 ]
 
 if __name__ == '__main__':
