@@ -28,9 +28,9 @@
 
 import sys
 
-from monitoring_utils.Checks.SNMP.Synology.ServiceUsed import ServiceUsed
-
 sys.path.insert(0, '/usr/local/monitoring/')
+
+from monitoring_utils.Checks.SNMP.Synology.ServiceUsed import ServiceUsed
 
 if __name__ == '__main__':
     ServiceUsed()

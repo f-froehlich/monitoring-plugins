@@ -28,9 +28,9 @@
 
 import sys
 
-from monitoring_utils.Checks.SNMP.PowerNet_MIB.BatteryReplacement import BatteryReplacement
-
 sys.path.insert(0, '/usr/local/monitoring/')
+
+from monitoring_utils.Checks.SNMP.PowerNet_MIB.BatteryReplacement import BatteryReplacement
 
 if __name__ == '__main__':
     BatteryReplacement()

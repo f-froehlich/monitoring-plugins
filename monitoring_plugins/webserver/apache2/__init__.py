@@ -25,12 +25,3 @@
 #
 #  Checkout this project on github <https://github.com/f-froehlich/monitoring-plugins>
 #  and also my other projects <https://github.com/f-froehlich>
-
-import sys
-
-sys.path.insert(0, '/usr/local/monitoring/')
-
-from monitoring_utils.Checks.SNMP.Synology.SystemStatus import SystemStatus
-
-if __name__ == '__main__':
-    SystemStatus()

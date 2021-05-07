@@ -28,9 +28,9 @@
 
 import sys
 
-from monitoring_utils.Checks.SNMP.PowerNet_MIB.BatteryRemainingRuntime import BatteryRemainingRuntime
-
 sys.path.insert(0, '/usr/local/monitoring/')
+
+from monitoring_utils.Checks.SNMP.PowerNet_MIB.BatteryRemainingRuntime import BatteryRemainingRuntime
 
 if __name__ == '__main__':
     BatteryRemainingRuntime()

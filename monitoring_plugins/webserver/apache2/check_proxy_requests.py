@@ -30,7 +30,7 @@ import sys
 
 sys.path.insert(0, '/usr/local/monitoring/')
 
-from monitoring_utils.Checks.SNMP.Synology.SystemStatus import SystemStatus
+from monitoring_utils.Checks.Webserver.Apache2.ProxyRequests import ProxyRequests
 
 if __name__ == '__main__':
-    SystemStatus()
+    ProxyRequests()

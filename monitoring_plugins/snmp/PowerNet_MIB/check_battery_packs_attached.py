@@ -28,9 +28,9 @@
 
 import sys
 
-from monitoring_utils.Checks.SNMP.PowerNet_MIB.BatteryPacksAttached import BatteryPacksAttached
-
 sys.path.insert(0, '/usr/local/monitoring/')
+
+from monitoring_utils.Checks.SNMP.PowerNet_MIB.BatteryPacksAttached import BatteryPacksAttached
 
 if __name__ == '__main__':
     BatteryPacksAttached()

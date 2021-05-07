@@ -28,9 +28,9 @@
 
 import sys
 
-from monitoring_utils.Checks.SNMP.Synology.Upgrade import Upgrade
-
 sys.path.insert(0, '/usr/local/monitoring/')
+
+from monitoring_utils.Checks.SNMP.Synology.Upgrade import Upgrade
 
 if __name__ == '__main__':
     Upgrade()

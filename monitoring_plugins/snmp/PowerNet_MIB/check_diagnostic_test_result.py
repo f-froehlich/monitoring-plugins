@@ -28,9 +28,9 @@
 
 import sys
 
-from monitoring_utils.Checks.SNMP.PowerNet_MIB.DiagnosticTestResult import DiagnosticTestResult
-
 sys.path.insert(0, '/usr/local/monitoring/')
+
+from monitoring_utils.Checks.SNMP.PowerNet_MIB.DiagnosticTestResult import DiagnosticTestResult
 
 if __name__ == '__main__':
     DiagnosticTestResult()

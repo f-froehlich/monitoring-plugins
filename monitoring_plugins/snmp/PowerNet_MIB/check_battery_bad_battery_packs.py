@@ -27,10 +27,10 @@
 #  and also my other projects <https://github.com/f-froehlich>
 
 import sys
+sys.path.insert(0, '/usr/local/monitoring/')
 
 from monitoring_utils.Checks.SNMP.PowerNet_MIB.BatteryBadBatteryPacks import BatteryBadBatteryPacks
 
-sys.path.insert(0, '/usr/local/monitoring/')
 
 if __name__ == '__main__':
     BatteryBadBatteryPacks()

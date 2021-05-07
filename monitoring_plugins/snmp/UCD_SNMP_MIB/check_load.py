@@ -28,9 +28,9 @@
 
 import sys
 
-from monitoring_utils.Checks.SNMP.UCD_SNMP_MIB.Load import Load
-
 sys.path.insert(0, '/usr/local/monitoring/')
+
+from monitoring_utils.Checks.SNMP.UCD_SNMP_MIB.Load import Load
 
 if __name__ == '__main__':
     Load()

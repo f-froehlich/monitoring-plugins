@@ -28,9 +28,9 @@
 
 import sys
 
-from monitoring_utils.Checks.SNMP.Synology.PowerStatus import PowerStatus
-
 sys.path.insert(0, '/usr/local/monitoring/')
+
+from monitoring_utils.Checks.SNMP.Synology.PowerStatus import PowerStatus
 
 if __name__ == '__main__':
     PowerStatus()
