@@ -61,7 +61,7 @@ additional_files = [
 ]
 setup_args = dict(
     name='monitoring_plugins',
-    version='2.2.0',
+    version='2.2.0-2',
     description='Plugins for monitoring',
     long_description_content_type="text/markdown",
     long_description=README + '\n\n\n' + CONTRIBUTORS + '\n\n\n' + CHANGELOG,
