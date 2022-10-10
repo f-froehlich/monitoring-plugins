@@ -28,7 +28,6 @@
 import sys
 
 sys.path.insert(0, '/usr/local/monitoring/')
-sys.path.append('/media/fafr/Data/dev/monitoring/monitoring-utils')
 
 from monitoring_utils.Checks.SecurityObservers.MozillaObservatory import MozillaObservatory
 
